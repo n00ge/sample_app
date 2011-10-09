@@ -115,3 +115,27 @@ footer {
 footer nav {
   float: none;
 }
+
+/* User show page */
+
+.profile:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.profile {display:inline-block; width:100%;}
+
+.main {
+  float: left;
+  width: 60%;
+  padding-left: 1em;
+}
+
+.sidebar {
+  float: right;
+  width: 29%;
+  padding: 1em;
+  vertical-align: top;
+  background: #ffc;
+}
+
+.profile img.gravatar {
+  border: 1px solid #999;
+  margin-bottom: -15px;
+}
