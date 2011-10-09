@@ -57,5 +57,19 @@ render_views
     	get :new
     	response.should have_selector('title', :content => "Sign up")
     end
+  
   end
+
+  describe "POST 'create'" do
+    
+    describe "failure" do
+      
+      before(:each) do
+        @attr = { :name => '', :email => '', :password => '', :password_confirmation => '' }
+      end
+
+    end
+
+  end
+
 end
