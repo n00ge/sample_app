@@ -118,8 +118,8 @@ footer nav {
 
 /* User show page */
 
-.profile:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
-.profile {display:inline-block; width:100%;}
+.wrapper:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.wrapper {display:inline-block; width:100%;}
 
 .main {
   float: left;
