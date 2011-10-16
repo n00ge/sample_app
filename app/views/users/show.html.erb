@@ -5,9 +5,16 @@
 			<%= gravatar_for @user %>
 			<%= @user.name %>
 		</h1>
+		<% if @user.microposts.any? %>
+		<div class="microposts">
+			<%= render @microposts %>
+		</div>
+		<%= will_paginate @microposts %>
+		<% end %>
 	</div>
 	<div class="sidebar round">
 		<strong>Name</strong> <%= @user.name %><br />
-		<strong>URL</strong> <%= link_to user_path(@user.id), user_path(@user.id)  %>
+		<strong>URL</strong> <%= link_to user_path(@user.id), user_path(@user.id)  %><br />
+		<strong>Microposts</strong> <%= @user.microposts.count %>
 	</div>
 </div>
