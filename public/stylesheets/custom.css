@@ -254,3 +254,16 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
+
+div.microposts div.gravatar {
+	float: left;
+	margin-right: 8px;
+}
+
+div.microposts div.gravatar+div.micropost {
+	padding-left: 70px;
+}
+
+.micropost .delete {
+	float: right;
+}

@@ -176,7 +176,7 @@ describe User do
       @mp2 = Factory(:micropost, :user => @user, :created_at => 1.hour.ago)
     end
     
-    it "should ahve a microposts attribute" do
+    it "should ahve a microposts attribute" do 
       @user.should respond_to(:microposts) 
     end
     
@@ -190,6 +190,22 @@ describe User do
         lambda do
           Micropost.find(micropost).should be_nil
         end.should raise_error(ActiveRecord::RecordNotFound)
+      end
+    end    
+
+    describe "status feed" do
+      it "should have a feed" do
+        @user.should respond_to(:feed)
+      end
+
+      it "should include the user's microposts" do
+        @user.feed.should include(@mp1) 
+        @user.feed.should include(@mp2) 
+      end
+      
+      it "should not include a different user's microposts" do
+        mp3 = Factory(:micropost, :user => Factory(:user, :email => Factory.next(:email)))
+        @user.feed.should_not include(mp3)
       end
     end
   end
